@@ -144,7 +144,7 @@ In this step, we will create a controller that will handle the logic to create, 
 * Create a `controllers` folder in `server/`.
 * Create a `messages_controller` in `server/controllers/`.
 * Open `server/controllers/messages_controller.js`.
-* Create an array to hold the messages.
+* Create an array to hold the messages. <--------- [MY STOPPING POINT]
 * Create a variable that will keep track of what `id` to assign to messages.
   * The `id` should start at `0` and increment after every creation.
 * Export an object with methods to create, read, update, and delete messages.
