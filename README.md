@@ -144,7 +144,7 @@ In this step, we will create a controller that will handle the logic to create, 
 * Create a `controllers` folder in `server/`.
 * Create a `messages_controller` in `server/controllers/`.
 * Open `server/controllers/messages_controller.js`.
-* Create an array to hold the messages. <--------- [MY STOPPING POINT]
+* Create an array to hold the messages.
 * Create a variable that will keep track of what `id` to assign to messages.
   * The `id` should start at `0` and increment after every creation.
 * Export an object with methods to create, read, update, and delete messages.
@@ -192,7 +192,6 @@ module.exports = {
 ```
 
 The `create` method should create a new message object using `text` and `time` from the request body and also the global `id` variable. It should then push this new messsage object into the `messages` array. After a new message object is created, `id` should be incremented by one so that the previous `id` won't be used on any other future messages. This will effectively keep the `id` unique for every message. We'll then want to send the updated `messages` array.
-
 ```js
 create: (req, res) => {
   const { text, time } = req.body;
@@ -201,6 +200,7 @@ create: (req, res) => {
   res.status(200).send(messages);
 }
 ```
+---------> STOPPING POINT <------------
 
 The `read` method should return the entire messages array.
 

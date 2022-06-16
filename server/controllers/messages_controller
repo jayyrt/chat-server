@@ -1,1 +1,33 @@
 let messages = [];
+let id = 0;
+
+module.exports = {
+    read: (req, res) => {
+
+    },
+    create: (req, res) => {
+        const { text, time } = req.body;
+        let message = {
+            id: id,
+            text: text,
+            time: time
+        }
+        messages.push(message);
+        id++;
+        res.status(200).send(messages);
+    },
+
+// ALTERNATIVE CREATE FUNCTION ----->
+//  create: (req, res) => {
+//      const { text, time } = req.body;
+//      messages.push({ id, text, time });
+//      id++;
+//      res.status(200).send(messages);
+//  }
+    update: (req, res) => {
+
+    },
+    delete: (req, res) => {
+
+    },
+};
