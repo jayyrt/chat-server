@@ -3,7 +3,7 @@ let id = 0;
 
 module.exports = {
     read: (req, res) => {
-
+        res.status(200).send(messages);
     },
     create: (req, res) => {
         const { text, time } = req.body;
@@ -25,7 +25,20 @@ module.exports = {
 //      res.status(200).send(messages);
 //  }
     update: (req, res) => {
+        const { text } = req.body;              // the `text` property that will be updated
+        const updateID = req.params.id;             // the updateID variable is used to identify which message will be updated
+        const messageIndex = messages.findIndex(message => message.id == updateID);
+                // the messageIndex used `.findIndex` to get the index where the IDs match
+                // We'll want to use double equals `==` to find the `id` instead of triple equals `===` in this case because the `id` in the message objects are numbers, and the `id` from the `req.params` is a string.
+        let message = messages[messageIndex]; // the `message` will then be passed into the messages array at the index referenced
+            // the updated message object is returned within the array
+        messages[messageIndex] = {
+            id: message.id,
+            text: text || message.text,
+            time: message.time
+        };
 
+        res.status(200).send(messages);
     },
     delete: (req, res) => {
 
