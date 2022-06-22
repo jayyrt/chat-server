@@ -226,8 +226,6 @@ update: (req, res) => {
 }
 ```
 
--------------> STOPPING POINT!!! <---------------
-
 The `delete` method should delete a message using the value of `id` from the request url parameters. We can use `.findIndex` again with the `id` to get the `index` of the message object and then use `.splice` to remove it from the `messages` array. We'll then want to send the updated `messages` array.
 
 ```js
@@ -373,6 +371,8 @@ app.listen(port, () => {
 ```
 
 </details>
+
+------------ STOPPING POINT! ----------------
 
 ## Step 6
 
